@@ -13,6 +13,7 @@ import org.testng.ISuiteListener;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import org.testng.Reporter;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -29,9 +30,8 @@ public class ListImpClass implements ITestListener , ISuiteListener{
 	
 	public void onStart(ISuite suite) {
 		// TODO Auto-generated method stub
-		System.out.println("Report confifguration");
+		Reporter.log("Report confifguration");
 	    String time = 	new Date().toString().replace(" ", "_").replace(":", "_");
-
 		ExtentSparkReporter spark = new ExtentSparkReporter("./AdvanceReport/report_"+time+".html");
 		spark.config().setDocumentTitle("CRM Test Suite Results");
 		spark.config().setReportName("CRM Report");

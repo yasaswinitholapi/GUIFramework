@@ -24,14 +24,14 @@ public class LoginPage extends WebDriverUtility{                              //
 		 PageFactory.initElements(driver, this);
 	 }
 	                           
-	@FindBy(name="user_name")                        // Rule-2 Object Creation
+	@FindBy(xpath="//input[@name='sadmun']")                        // Rule-2 Object Creation
 	private WebElement usernameEdt;
 	
-	@FindBy(name="user_password")
+	@FindBy(xpath="//input[@name='sadmpw']")
 	private WebElement passwordEdt;
 	
-	@FindBy(id = "submitButton")
-	private WebElement loginBtn;
+	@FindBy(xpath="//button[text()='SUBMIT']")
+	private WebElement submitBtn;
 	     
 	
 	                                             
@@ -42,11 +42,11 @@ public class LoginPage extends WebDriverUtility{                              //
 	public WebElement getPasswordEdt() {
 		return passwordEdt;
 	}
-
-	public WebElement getLoginBtn() {
-		return loginBtn;
+		
+public WebElement getSubmitBtn() {
+		return submitBtn;
 	}
-	
+
 /**
  *  login to application based username , password , url argumnets 
  * @param url
@@ -56,11 +56,19 @@ public class LoginPage extends WebDriverUtility{                              //
 	 public void loginToapp(String url , String username , String password) {
 		 waitForPageToLoad(driver);
 		 driver.get(url);	
-		// driver.manage().window().maximize();
+		 driver.manage().window().maximize();
 		 usernameEdt.sendKeys(username);
 		 passwordEdt.sendKeys(password);
-		 loginBtn.click();
+		 submitBtn.click();
 	 }
-	
+	 public void loginTosuperapp(String surl , String susername , String spassword) throws InterruptedException {
+//		 waitForPageToLoad(driver);
+//		 driver.get(surl);	
+		// driver.manage().window().maximize();
+		 usernameEdt.sendKeys(susername);
+		 passwordEdt.sendKeys(spassword);
+		 Thread.sleep(5000);
+		 submitBtn.click();
+	 }
 	
 }

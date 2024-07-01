@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
@@ -26,7 +27,7 @@ public class ExcelUtility {
 	 */
 	public String getDataFromExcel(String sheetName , int rowNum , int celNum) throws Throwable {
 		
-		FileInputStream fis = new FileInputStream("./testdata/testScriptdata.xlsx");
+		FileInputStream fis = new FileInputStream("./testdata/TestCaseDataHMS.xlsx");
 		Workbook wb =  WorkbookFactory.create(fis);
 	    String data = wb.getSheet(sheetName).getRow(rowNum).getCell(celNum).getStringCellValue();
 	    wb.close();

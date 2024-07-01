@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" thread-count="2" name="Suite">
+	<test name="Test-1">
+		<classes>
+			<class name="com.GUISelenium.HMS.StaffInfo.AddStaffMemberSysTest" />
+		</classes>
+	</test>
+	
+	<test name="Test-2">
+		<classes>
+			<class name="com.GUISelenium.HMS.StaffInfo.AdmittedPatientInfoTest" />
+			<class name="com.GUISelenium.HMS.StaffInfo.StaffMemerModificationTest" />
+			<class name="com.GUISelenium.HMS.StaffInfo.PatientInfoModifyTest" />
+			<class name="com.GUISelenium.HMS.StaffInfo.AddStaffMemberTest" />
+		</classes>
+	</test> <!--
+	Test -->
+</suite> <!--
+Suite -->
